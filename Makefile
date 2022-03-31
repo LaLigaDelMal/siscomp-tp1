@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS= -v
 
 asm_sh: asm clean
-	${CC} -fPIC -shared -o obj/asmlibrary.so -m32 src/asmlibrary.c obj/asm.o
+	${CC} -fPIC -shared -o src/asmlibrary.so -m32 src/asmlibrary.c obj/asm.o
 
 asm: clean
 	nasm -f elf32 -d ELF_TYPE src/assembly.asm -o obj/asm.o

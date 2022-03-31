@@ -2,13 +2,11 @@ import requests
 import os
 from ctypes import *
 
-cur_path = os.path.dirname(__file__)
-#rel_path = "../ob/asmlibrary.txt"
 
-so_file = os.path.relpath('obj/asmlibrary.so', cur_path)
-
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 print(so_file)
-asm_lib = CDLL(so_file)
+
+asm_lib = CDLL(os.path.join(__location__, "asmlibrary.so"))
 
 
 URL_BTC = "https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT"
