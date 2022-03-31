@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -v -Wall -pedantic -Wextra -Wconversion -std=gnu11
+CFLAGS= -v
 
 conversor: clean asm
 	${CC} ${CFLAGS} -o conversor -m32 tp1.c asm.o

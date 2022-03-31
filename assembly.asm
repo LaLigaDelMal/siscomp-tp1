@@ -3,6 +3,7 @@
 segment .data
 
 segment .text
+    global calcular_cotizacion
 
 calcular_cotizacion:
     push ebp      ; Guardo EBP en la pila 
@@ -13,15 +14,16 @@ calcular_cotizacion:
     ; Salvar los demas registros
     ;push eax  No sabemos si conviene salvar todos los registros o solo esos dos
     ;push ebx
-    pusha
+    ;pusha
 
     ; Hago el cálculo acá
     mov eax, [ebp + 8]     ; Cargo el segundo parámetro en EAX
     mov ebx, [ebp + 12]    ; Cargo el primer parametro en EBX
     add eax, ebx           ; El valor de retorno vuelve en el registro EAX
+    mov eax, 6
 
     ; Al salir
-    popa
+    ;popa
     mov esp, ebp   ; Vuelvo el stack pointer al stack frame anterior
     pop ebp
     ret
