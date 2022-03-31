@@ -2,10 +2,10 @@ CC=gcc
 CFLAGS= -v -Wall -pedantic -Wextra -Wconversion -std=gnu11
 
 conversor: clean asm
-	${CC} ${CFLAGS} tp1.c -o conversor -m32 asm.o
+	${CC} ${CFLAGS} -o conversor -m32 tp1.c asm.o
 
 asm: clean
-	nasm assembly.asm -f elf64 -d ELF_TYPE -o asm.o
+	nasm -f elf32 -d ELF_TYPE assembly.asm -o asm.o
 
 clean:
 	rm -f conversor
