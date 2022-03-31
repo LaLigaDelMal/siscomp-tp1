@@ -20,7 +20,6 @@ calcular_cotizacion:
     mov eax, [ebp + 8]     ; Cargo el segundo parámetro en EAX
     mov ebx, [ebp + 12]    ; Cargo el primer parametro en EBX
     add eax, ebx           ; El valor de retorno vuelve en el registro EAX
-    mov eax, 6
 
     ; Al salir
     ;popa
