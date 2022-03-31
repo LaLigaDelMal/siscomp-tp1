@@ -1,11 +1,14 @@
 CC=gcc
 CFLAGS= -v
 
-conversor: clean asm
-	${CC} ${CFLAGS} -o conversor -m32 tp1.c asm.o
+conversor: clean asm_sh
+	${CC} ${CFLAGS} -o bin/conversor -m32 src/asmlibrary.c obj/asm.o
+
+asm_sh: asm clean
+	${CC} -fPIC -shared -o obj/asmlibrary.so -m32 src/asmlibrary.c obj/asm.o
 
 asm: clean
-	nasm -f elf32 -d ELF_TYPE assembly.asm -o asm.o
+	nasm -f elf32 -d ELF_TYPE src/assembly.asm -o obj/asm.o
 
 clean:
 	rm -f conversor
