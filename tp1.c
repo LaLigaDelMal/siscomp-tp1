@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "cdecl.h"
 
 unsigned long calcular_cotizacion (unsigned int, unsigned int);
 
