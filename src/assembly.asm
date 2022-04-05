@@ -3,7 +3,7 @@
 segment .data
 
 segment .text
-    global calcular_cotizacion
+    global calcular
 
 calcular:
     push ebp      ; Guardo EBP en la pila 
