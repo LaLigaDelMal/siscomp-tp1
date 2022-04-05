@@ -4,7 +4,7 @@ from ctypes import *
 
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
-print(so_file)
+
 
 asm_lib = CDLL(os.path.join(__location__, "asmlibrary.so"))
 
