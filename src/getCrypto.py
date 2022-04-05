@@ -29,7 +29,8 @@ def main():
     print (btc)
     print (eth)
     print (arg)
-    asm_lib.cal_cotizacion(3, 2)
+    print(asm_lib.cal_cotizacion(3, 2))
+    
 
 
 if __name__ == "__main__":
