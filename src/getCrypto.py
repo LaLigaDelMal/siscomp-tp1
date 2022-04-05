@@ -34,7 +34,7 @@ def main():
     mylib.calcular_cotizacion.argtypes = [ctypes.c_int, ctypes.c_int]
 
     # 3. call function mysum
-    resultado = mylib.calcular_cotizacionlen(2, 3)
+    resultado = mylib.calcular_cotizacion(2, 3)
 
 
 if __name__ == "__main__":
