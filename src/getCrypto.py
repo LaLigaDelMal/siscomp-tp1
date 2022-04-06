@@ -6,6 +6,7 @@ URL_ETH = "https://api.binance.com/api/v3/avgPrice?symbol=ETHUSDT"
 URL_ARG = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 
 def main():
+    print("sadasdasdsadasdaasdasdasdasdasdasdas")
     btc_response = requests.get(URL_BTC)
     btc_data = btc_response.json()
     btc = btc_data['price']
@@ -22,9 +23,9 @@ def main():
     ethereum = float(eth)
     dolarPesos = float(arg.split(',')[0])
 
-    print (bitcoin)
-    print (ethereum)
-    print (dolarPesos)
+    print(bitcoin)
+    print(ethereum)
+    print(dolarPesos)
 
     # 1. open the shared library
     mylib = ctypes.CDLL("./asmlibrary.so")
@@ -34,7 +35,7 @@ def main():
     mylib.calcular_cotizacion.argtypes = [ctypes.c_int, ctypes.c_int]
 
     # 3. call function mysum
-    resultado = mylib.calcular_cotizacion(2, 3)
+    resultado = mylib.calcular_cotizacion(bitcoin, dolarPesos)
 
 
 if __name__ == "__main__":
