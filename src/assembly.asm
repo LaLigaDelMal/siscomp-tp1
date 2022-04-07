@@ -9,7 +9,7 @@ calcular:
     push ebp      ; Guardo EBP en la pila 
     mov ebp, esp  ; Apunto ESP al comienzo del frame
     ; Acá reservo espacio para variables automaticas
-    ;sub esp, 4    ; Variable resultado
+    ;sub esp, 8    ; Variable resultado
 
     ; Hago el cálculo acá
     mov eax, [ebp + 8]            ; Cargo el segundo parámetro en EAX

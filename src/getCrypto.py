@@ -21,11 +21,11 @@ def main():
 
     bitcoin = int(float(btc))
     ethereum = int(float(eth))
-    dolarPesos = int(arg.split(',')[0])
+    pesos = int(arg.split(',')[0])
 
     print(bitcoin)
     print(ethereum)
-    print(dolarPesos)
+    print(pesos)
 
     # 1. open the shared library
     mylib = ctypes.CDLL("./asmlibrary.so")
@@ -35,9 +35,12 @@ def main():
     mylib.calcular_cotizacion.argtypes = [ctypes.c_uint, ctypes.c_uint]
 
     # 3. call function mysum
-    resultado = mylib.calcular_cotizacion(bitcoin, dolarPesos)
+    btc_a_pesos = mylib.calcular_cotizacion(bitcoin, pesos)
+    eth_a_pesos = mylib.calcular_cotizacion(ethereum, pesos)
 
-    print(resultado)
+    print(btc_a_pesos)
+    print(eth_a_pesos)
+
 
 if __name__ == "__main__":
     main()
