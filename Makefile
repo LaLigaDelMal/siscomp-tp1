@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -v
+CFLAGS= -v -g
 
 asm_sh: asm clean
 	${CC} -fPIC -shared -o src/asmlibrary.so -m32 src/asmlibrary.c obj/asm.o
@@ -15,6 +15,3 @@ me_a_sandwich:
 
 conversor: clean asm_sh
 	${CC} ${CFLAGS} -o bin/conversor -m32 src/asmlibrary.c obj/asm.o
-
-#Adriel docker builder:	
-#docker image build -t siscomppy $HOME/Proyectos/SISCOMP

@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include "cdecl.h"
+//#include "cdecl.h"
 
-int calcular(int, int);
+long long calcular(unsigned int, unsigned int);
 
-int calcular_cotizacion (int cripto, int peso)
+long long calcular_cotizacion (unsigned int cripto, unsigned int peso)
 {
-    int resultado = calcular(cripto, peso);
-    fprintf(stdout, "%d \n", resultado);
+    long long resultado = calcular(cripto, peso);
+
+    //fprintf(stdout, "%lld \n", resultado);
 
     return resultado;
 }
